@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@movies-app/components": ["components/index.js"],
+      "@movies-app/layout": ["layout/index.js"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
