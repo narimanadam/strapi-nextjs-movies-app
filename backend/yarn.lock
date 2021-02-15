@@ -953,6 +953,18 @@
   dependencies:
     yup "^0.27.0"
 
+"@ckeditor/ckeditor5-build-classic@^24.0.0":
+  version "24.0.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-build-classic/-/ckeditor5-build-classic-24.0.0.tgz#18f310fd0f62c77d3c9ad0348d881c5f1638c564"
+  integrity sha512-659ZAYbuQbPj3ElqrTSV7aqPtW4vt30Th0PiheFei7adIgmu1bFTHgcM3hqm7XGRzGmBRV6C07xSwUptxn3cvQ==
+
+"@ckeditor/ckeditor5-react@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-react/-/ckeditor5-react-3.0.0.tgz#05a1bdd7b26a8c1df6fd734376ea84e394d6ab47"
+  integrity sha512-kqoD0rbGeUp7CjYBtKcwXVVSWO/VL1QsoTyeGbFyoMHmkM96fBj0TI0Xs2kFqKkeiICtAnwvul3GVNWbIlK/Tw==
+  dependencies:
+    prop-types "^15.7.2"
+
 "@emotion/cache@^10.0.27", "@emotion/cache@^10.0.9":
   version "10.0.29"
   resolved "https://registry.yarnpkg.com/@emotion/cache/-/cache-10.0.29.tgz#87e7e64f412c060102d589fe7c6dc042e6f9d1e0"
@@ -4546,6 +4558,13 @@ ignore-walk@^3.0.1:
   dependencies:
     minimatch "^3.0.4"
 
+image-size@^0.9.3:
+  version "0.9.3"
+  resolved "https://registry.yarnpkg.com/image-size/-/image-size-0.9.3.tgz#f7efce6b0a1649b44b9bc43b9d9a5acf272264b6"
+  integrity sha512-5SakFa79uhUVSjKeQE30GVzzLJ0QNzB53+I+/VD1vIesD6GP6uatWIlgU0uisFNLt1u0d6kBydp7yfk+lLJhLQ==
+  dependencies:
+    queue "6.0.1"
+
 immer@^6.0.2:
   version "6.0.9"
   resolved "https://registry.yarnpkg.com/immer/-/immer-6.0.9.tgz#b9dd69b8e69b3a12391e87db1e3ff535d1b26485"
@@ -7020,6 +7039,13 @@ querystringify@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.1.1.tgz#60e5a5fd64a7f8bfa4d2ab2ed6fdf4c85bad154e"
   integrity sha512-w7fLxIRCRT7U8Qu53jQnJyPkYZIaR4n5151KMfcJlO/A9397Wxb1amJvROTK6TOnp7PfoAmg/qXiNHI+08jRfA==
+
+queue@6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/queue/-/queue-6.0.1.tgz#abd5a5b0376912f070a25729e0b6a7d565683791"
+  integrity sha512-AJBQabRCCNr9ANq8v77RJEv73DPbn55cdTb+Giq4X0AVnNVZvMHlYp7XlQiN+1npCZj1DuSmaA2hYVUUDgxFDg==
+  dependencies:
+    inherits "~2.0.3"
 
 quick-format-unescaped@^1.1.2:
   version "1.1.2"

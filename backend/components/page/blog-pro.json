@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_page_blog_pros",
+  "info": {
+    "name": "blog-pro",
+    "icon": "atlas"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "body": {
+      "type": "richtext"
+    }
+  }
+}

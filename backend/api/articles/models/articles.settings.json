@@ -1,26 +1,24 @@
 {
   "kind": "collectionType",
-  "collectionName": "actors",
+  "collectionName": "articles",
   "info": {
-    "name": "actors"
+    "name": "Articles"
   },
   "options": {
     "increments": true,
     "timestamps": true
   },
   "attributes": {
-    "first_name": {
+    "title": {
       "type": "string"
     },
-    "last_name": {
+    "author": {
       "type": "string"
     },
-    "movies": {
-      "collection": "movies",
-      "via": "actors",
-      "dominant": true
+    "date": {
+      "type": "date"
     },
-    "image": {
+    "articleImage": {
       "model": "file",
       "via": "related",
       "allowedTypes": [
@@ -31,7 +29,7 @@
       "plugin": "upload",
       "required": false
     },
-    "bio": {
+    "body": {
       "type": "richtext"
     }
   }

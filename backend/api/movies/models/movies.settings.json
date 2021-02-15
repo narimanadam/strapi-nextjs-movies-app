@@ -27,11 +27,17 @@
       "required": false
     },
     "actors": {
-      "collection": "actors",
-      "via": "movies"
+      "via": "movies",
+      "collection": "actors"
     },
     "description": {
       "type": "text"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "genre": {
+      "model": "genre"
     }
   }
 }

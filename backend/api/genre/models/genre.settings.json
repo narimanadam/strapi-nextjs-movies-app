@@ -1,24 +1,21 @@
 {
   "kind": "collectionType",
-  "collectionName": "navigations",
+  "collectionName": "genres",
   "info": {
-    "name": "Navigation"
+    "name": "Genre"
   },
   "options": {
     "increments": true,
     "timestamps": true
   },
   "attributes": {
-    "title_en": {
+    "title": {
       "type": "string"
     },
-    "slug_en": {
+    "slug": {
       "type": "string"
     },
     "title_fr": {
-      "type": "string"
-    },
-    "slug_fr": {
       "type": "string"
     }
   }

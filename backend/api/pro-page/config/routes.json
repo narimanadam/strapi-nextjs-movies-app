@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/pro-page",
+      "handler": "pro-page.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/pro-page",
+      "handler": "pro-page.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/pro-page",
+      "handler": "pro-page.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

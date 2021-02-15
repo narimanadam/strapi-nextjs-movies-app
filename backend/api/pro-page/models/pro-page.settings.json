@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "pro_pages",
+  "info": {
+    "name": "pro page"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "articles": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page.blog-pro"
+    }
+  }
+}
