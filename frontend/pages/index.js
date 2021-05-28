@@ -1,23 +1,33 @@
 import React from "react";
-import { Card } from "@movies-app/components";
+import { getSession } from "next-auth/client";
 
-const Home = ({ movies }) => {
+import { HeroBanner, MovieSlider } from "@movies-app/components";
+
+const Home = ({ movies, genres }) => {
   return (
-    <div className="container grid grid-cols-1 gap-0 md:grid-cols-3 gap-4 ">
-      {movies.map((movie) => (
-        <Card movie={movie} key={movie.id} />
-      ))}
-    </div>
+    <>
+      <HeroBanner />
+      <div className="container mx-auto mb-8">
+        {genres.map((genre) => (
+          <MovieSlider genre={genre} movies={movies} key={genre.id} />
+        ))}
+      </div>
+    </>
   );
 };
 
 export async function getStaticProps() {
   const { API_URL } = process.env;
-  const res = await fetch(`${API_URL}/movies`);
-  const data = await res.json();
+
+  const moviesRes = await fetch(`${API_URL}/movies`);
+  const genresRes = await fetch(`${API_URL}/genres`);
+
+  const movies = await moviesRes.json();
+  const genres = await genresRes.json();
   return {
     props: {
-      movies: data,
+      movies,
+      genres,
     },
   };
 }

@@ -14,7 +14,8 @@ export const Poster = styled.img(tw`
 `);
 
 export const Body = styled.div(tw`
-    p-2
+    py-2
+    px-4
 `);
 
 export const Title = styled.h3(tw`
@@ -24,5 +25,7 @@ export const Title = styled.h3(tw`
 `);
 
 export const Desc = styled.span(tw`
-  
+    max-w-full
+    truncate
+    
 `);

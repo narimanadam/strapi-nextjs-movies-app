@@ -3,7 +3,9 @@
     "baseUrl": "src",
     "paths": {
       "@movies-app/components": ["components/index.js"],
-      "@movies-app/layout": ["layout/index.js"]
+      "@movies-app/contexts": ["contexts/index.js"],
+      "@movies-app/layout": ["layout/index.js"],
+      "@movies-app/helpers": ["helpers/index.js"]
     }
   },
   "exclude": ["node_modules"]

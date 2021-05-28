@@ -7,11 +7,8 @@ const GlobalStyles = () => (
     <Global
       styles={css`
         ${normalize}
-        .container {
-          max-width: 960px;
-          width: 100%auto;
-          margin: 0 auto;
-          padding: 0 30px;
+        .swiper-slide img {
+          object-fit: cover;
         }
       `}
     />
