@@ -17,7 +17,7 @@ const Pro = ({ articles }) => {
   );
 };
 
-export async function getServerSideProps({ req }) {
+Pro.getInitialProps = async ({ req }) => {
   const cookies = new Cookies(req.headers.cookie);
   const jwtToken = cookies.get("jwt");
   console.log("jwtToken", jwtToken);
@@ -36,6 +36,6 @@ export async function getServerSideProps({ req }) {
       articles,
     },
   };
-}
+};
 
 export default Pro;

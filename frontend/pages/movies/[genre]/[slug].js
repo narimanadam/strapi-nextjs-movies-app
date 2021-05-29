@@ -18,7 +18,7 @@ const Movie = ({ movie }) => {
 
 export default Movie;
 
-export async function getServerSideProps(context) {
+Movie.getInitialProps = async (context) => {
   const { API_URL } = process.env;
 
   const { slug } = context.query;
@@ -30,4 +30,4 @@ export async function getServerSideProps(context) {
       movie: movie[0],
     },
   };
-}
+};

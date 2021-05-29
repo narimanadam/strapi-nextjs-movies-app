@@ -19,7 +19,7 @@ const BlogItemPage = ({ article }) => {
 
 export default BlogItemPage;
 
-export async function getServerSideProps(context) {
+BlogItemPage.getInitialProps = async (context) => {
   const { API_URL } = process.env;
 
   const { id } = context.query;
@@ -31,4 +31,4 @@ export async function getServerSideProps(context) {
       article,
     },
   };
-}
+};

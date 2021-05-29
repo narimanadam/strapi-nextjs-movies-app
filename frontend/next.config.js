@@ -2,19 +2,31 @@ const nextTranslate = require("next-translate");
 
 module.exports = {
   env: {
-    API_URL: process.env.API_URL,
+    API_URL: process.env.NEXT_PUBLIC_API_URL,
     IMAGES_DOMAIN: process.env.IMAGES_DOMAIN,
+    NEXTAUTH_URL: process.env.NEXTAUTH_URL,
   },
   publicRuntimeConfig: {
-    API_URL: process.env.API_URL,
+    API_URL: process.env.NEXT_PUBLIC_API_URL,
     IMAGES_DOMAIN: process.env.IMAGES_DOMAIN,
+    NEXTAUTH_URL: process.env.NEXTAUTH_URL,
   },
   images: {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    domains: [process.env.IMAGES_DOMAIN],
+    domains: [`${process.env.IMAGES_DOMAIN}`],
     path: "/_next/image",
     loader: "default",
+  },
+  webpack: (config, { isServer }) => {
+    // Fixes npm packages that depend on `fs` module
+    if (!isServer) {
+      config.node = {
+        fs: "empty",
+      };
+    }
+
+    return config;
   },
   ...nextTranslate(),
 };

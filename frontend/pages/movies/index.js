@@ -46,8 +46,7 @@ const MoviesPage = ({ movies, page, numberOfMovies, limit }) => {
     </div>
   );
 };
-
-export async function getServerSideProps({ query: { page = 1 } }) {
+MoviesPage.getInitialProps = async ({ query: { page = 1 } }) => {
   const { API_URL } = process.env;
   const limit = 10;
   const start = +page === 1 ? 0 : (+page - 1) * limit;
@@ -64,6 +63,6 @@ export async function getServerSideProps({ query: { page = 1 } }) {
       limit,
     },
   };
-}
+};
 
 export default MoviesPage;

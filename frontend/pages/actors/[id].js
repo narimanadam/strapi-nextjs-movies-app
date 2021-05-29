@@ -16,7 +16,7 @@ const ActorDetailsPage = ({ actor }) => {
 
 export default ActorDetailsPage;
 
-export async function getServerSideProps(context) {
+ActorDetailsPage.getInitialProps = async (context) => {
   const { API_URL } = process.env;
 
   const { id } = context.query;
@@ -28,4 +28,4 @@ export async function getServerSideProps(context) {
       actor,
     },
   };
-}
+};
