@@ -36,7 +36,9 @@ const Register = () => {
       const { publicRuntimeConfig } = getConfig();
 
       const register = await fetch(
-        `${publicRuntimeConfig.API_URL}/auth/local/register`,
+        new URL(
+          `${publicRuntimeConfig.NEXT_PUBLIC_API_URL}/auth/local/register`
+        ),
         {
           method: "POST",
           headers: {

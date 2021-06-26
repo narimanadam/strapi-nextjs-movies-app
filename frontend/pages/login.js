@@ -34,8 +34,6 @@ const Login = ({ providers, session }) => {
     [values]
   );
 
-  console.log("sesssion", session);
-
   const handleLogin = useCallback(async () => {
     try {
       const loginInfo = {
@@ -45,14 +43,17 @@ const Login = ({ providers, session }) => {
 
       const { publicRuntimeConfig } = getConfig();
 
-      const login = await fetch(`${publicRuntimeConfig.API_URL}/auth/local`, {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(loginInfo),
-      });
+      const login = await fetch(
+        new URL(`${publicRuntimeConfig.API_URL}/auth/local`),
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(loginInfo),
+        }
+      );
 
       const loginRes = await login.json();
 

@@ -1,7 +1,14 @@
 import React from "react";
 import { ActorItem } from "@movies-app/components";
+import { useRouter } from "next/router";
 
 const ActorDetailsPage = ({ actor }) => {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    // your loading indicator
+    return <div>loading...</div>;
+  }
   return (
     <div className="container mx-auto mt-8">
       <ActorItem
@@ -16,11 +23,28 @@ const ActorDetailsPage = ({ actor }) => {
 
 export default ActorDetailsPage;
 
-ActorDetailsPage.getInitialProps = async (context) => {
+export const getStaticPaths = async () => {
   const { API_URL } = process.env;
 
-  const { id } = context.query;
-  const res = await fetch(`${API_URL}/actors/${id}`);
+  const res = await fetch(new URL(`${API_URL}/actors`));
+  const actors = await res.json();
+  const paths = actors.map((actor) => ({
+    params: {
+      id: actor.id.toString(),
+    },
+  }));
+
+  return {
+    paths,
+    fallback: true,
+  };
+};
+
+export const getStaticProps = async (context) => {
+  const { API_URL } = process.env;
+
+  const { id } = context.params;
+  const res = await fetch(new URL(`${API_URL}/actors/${id}`));
   const actor = await res.json();
 
   return {

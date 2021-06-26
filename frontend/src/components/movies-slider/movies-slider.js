@@ -21,15 +21,12 @@ export const SwiperMoviesSlider = ({ movies }) => {
     <Swiper {...params}>
       {movies.map((movie) => (
         <div className="swiper-slide" key={movie.id}>
-          <Link
-            href="/movies/[genre]/[slug]"
-            as={`/movies/${movie.genre?.slug}/${movie.slug}`}
-          >
+          <Link href="/movies/[slug]" as={`/movies/${movie.slug}`}>
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a>
               <img
-                src={`${API_URL}${movie.poster.url}`}
-                data-srcset={`${API_URL}${movie.poster.url}`}
+                src={`${movie.poster.url}`}
+                data-srcset={`${movie.poster.url}`}
                 alt={movie.title}
                 className="swiper-lazy"
               />

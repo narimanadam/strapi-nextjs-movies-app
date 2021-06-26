@@ -22,7 +22,7 @@ const options = {
       const isSignIn = user ? true : false;
       if (isSignIn) {
         const response = await fetch(
-          `https://db80437077a5.ngrok.io/auth/${account.provider}/callback?access_token=${account?.accessToken}`
+          `https://movies-app-nextjs-strapi.herokuapp.com/auth/${account.provider}/callback?access_token=${account?.accessToken}`
         );
         const data = await response.json();
         token.jwt = data.jwt;

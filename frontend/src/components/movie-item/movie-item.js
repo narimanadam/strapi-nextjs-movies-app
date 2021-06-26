@@ -7,7 +7,7 @@ export const MovieItem = ({ movie }) => {
   return (
     <Styled.MovieItem>
       <Styled.MovieDetailsWrapper>
-        <Styled.Poster src={`${API_URL}${movie.poster.url}`} />
+        <Styled.Poster src={`${movie.poster.url}`} />
         <Styled.Wrapper>
           <Styled.Title>{movie.title}</Styled.Title>
           <Styled.Date>{movie.release_date}</Styled.Date>

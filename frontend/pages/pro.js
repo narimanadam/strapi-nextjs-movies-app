@@ -17,14 +17,13 @@ const Pro = ({ articles }) => {
   );
 };
 
-Pro.getInitialProps = async ({ req }) => {
+export async function getInitialProps({ req }) {
   const cookies = new Cookies(req.headers.cookie);
   const jwtToken = cookies.get("jwt");
-  console.log("jwtToken", jwtToken);
 
   const { API_URL } = process.env;
 
-  const res = await fetch(`${API_URL}/pro-page`, {
+  const res = await fetch(new URL(`${API_URL}/pro-page`), {
     headers: {
       Authorization: `Bearer ${jwtToken}`,
     },
@@ -36,6 +35,6 @@ Pro.getInitialProps = async ({ req }) => {
       articles,
     },
   };
-};
+}
 
 export default Pro;

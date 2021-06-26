@@ -29,15 +29,18 @@ const AddMovie = () => {
         slug: values.slug,
       };
 
-      const add = await fetch(`${publicRuntimeConfig.API_URL}/movies`, {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${jwt}`,
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(movieInfo),
-      });
+      const add = await fetch(
+        new URL(`${publicRuntimeConfig.API_URL}/movies`),
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${jwt}`,
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(movieInfo),
+        }
+      );
 
       const addRes = await add.json();
     },

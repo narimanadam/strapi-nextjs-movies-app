@@ -72,7 +72,9 @@ MyApp.getInitialProps = async ({ Component, ctx }) => {
   const jwt = cookies.get("jwt");
   const session = await getSession({ ctx });
 
-  const res = await fetch(`${publicRuntimeConfig.API_URL}/navigations`);
+  const res = await fetch(
+    new URL(`${publicRuntimeConfig.API_URL}/navigations`)
+  );
   const navigation = await res.json();
   if (Component.getInitialProps) {
     pageProps = await Component.getInitialProps(ctx);
