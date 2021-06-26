@@ -6,11 +6,10 @@ import * as Styled from "./actor-item.styles";
 
 export const ActorItem = ({ name, bio, img, movies }) => {
   const parsedBio = useMemo(() => markdown.toHTML(bio), [bio]);
-  const { API_URL } = process.env;
 
   return (
     <>
-      <Styled.Img src={`${API_URL}${img}`} />
+      <Styled.Img src={`${img}`} />
       <Styled.Name>{name}</Styled.Name>
       <Styled.Bio dangerouslySetInnerHTML={{ __html: parsedBio }} />
       <Styled.Title>Movies</Styled.Title>

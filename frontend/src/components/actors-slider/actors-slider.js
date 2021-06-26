@@ -6,8 +6,6 @@ import Image from "next/image";
 import * as Styled from "./actors-slider.styles";
 
 const SwiperSlider = ({ actors }) => {
-  const { API_URL } = process.env;
-
   const params = {
     slidesPerView: 7,
     spaceBetween: 16,
@@ -25,8 +23,8 @@ const SwiperSlider = ({ actors }) => {
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a>
               <Image
-                src={`${API_URL}${image.url}`}
-                data-srcset={`${API_URL}${image.url}`}
+                src={`${image.url}`}
+                data-srcset={`${image.url}`}
                 alt={`${first_name}${last_name}`}
                 className="swiper-lazy"
                 width={205}
