@@ -15,11 +15,6 @@
     "last_name": {
       "type": "string"
     },
-    "movies": {
-      "collection": "movies",
-      "via": "actors",
-      "dominant": true
-    },
     "image": {
       "model": "file",
       "via": "related",
@@ -33,6 +28,10 @@
     },
     "bio": {
       "type": "richtext"
+    },
+    "movies": {
+      "via": "actors",
+      "collection": "movies"
     }
   }
 }

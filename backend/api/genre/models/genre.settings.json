@@ -17,6 +17,10 @@
     },
     "title_fr": {
       "type": "string"
+    },
+    "movies": {
+      "via": "genre",
+      "collection": "movies"
     }
   }
 }
