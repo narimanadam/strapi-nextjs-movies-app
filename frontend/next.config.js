@@ -1,5 +1,7 @@
 const nextTranslate = require("next-translate");
 
+const isProd = process.env.NODE_ENV === "production";
+
 module.exports = {
   env: {
     API_URL: process.env.API_URL,
@@ -14,9 +16,9 @@ module.exports = {
   images: {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    domains: [`${process.env.IMAGES_DOMAIN}`],
-    path: "/_next/image",
-    loader: "default",
+    domains: isProd ? ["res.cloudinary.com"] : [`${process.env.IMAGES_DOMAIN}`],
+    path: isProd ? "" : "/_next/image",
+    loader: isProd ? "cloudinary" : "default",
   },
   webpack: (config, { isServer }) => {
     // Fixes npm packages that depend on `fs` module

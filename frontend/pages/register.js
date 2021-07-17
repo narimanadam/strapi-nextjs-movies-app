@@ -35,10 +35,8 @@ const Register = () => {
 
       const { publicRuntimeConfig } = getConfig();
 
-      const register = await fetch(
-        new URL(
-          `${publicRuntimeConfig.NEXT_PUBLIC_API_URL}/auth/local/register`
-        ),
+      const registerUser = await fetch(
+        new URL(`${publicRuntimeConfig.API_URL}/auth/local/register`),
         {
           method: "POST",
           headers: {
@@ -49,7 +47,7 @@ const Register = () => {
         }
       );
 
-      const registerRes = await register.json();
+      const registerRes = await registerUser.json();
 
       const cookies = new Cookies();
       if (registerRes.error) {
